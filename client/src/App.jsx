@@ -4,7 +4,7 @@ import Routes from "./Routes";
 
 
 function App() {
-  axios.defaults.baseURL = 'http://127.0.0.1:4040/';
+  axios.defaults.baseURL = 'https://people-chat-mu.vercel.app/';
   axios.defaults.withCredentials = true;
   return (
     <UserContextProvider>
