@@ -9,8 +9,12 @@ export default function RegisterAndLoginForm() {
   const {setUsername:setLoggedInUsername, setId} = useContext(UserContext);
   async function handleSubmit(ev) {
     ev.preventDefault();
-    const url = isLoginOrRegister === 'register' ? 'register' : 'login';
-    const {data} = await axios.post(url, {username,password});
+    // const url = isLoginOrRegister === 'register' ? 'register' : 'login';
+    if(isLoginOrRegister === 'register'){
+      const {data} = await axios.post('https://people-chat-mu.vercel.app/register', {username,password});
+    }else{
+      const {data} = await axios.post('https://people-chat-mu.vercel.app/login', {username,password});
+    }
     console.log(data);
     setLoggedInUsername(username);
     setId(data.id);
