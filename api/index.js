@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: 'http://127.0.0.1:5173', // Replace this with the actual origin of your frontend application
+  origin: 'https://people-chat-b75n.vercel.app/', 
   credentials: true, // If you're using cookies or sessions, enable credentials
 }));
 
